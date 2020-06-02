@@ -1,0 +1,33 @@
+<div class="submit-form">
+  <div *ngIf="!submitted">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        required
+        [(ngModel)]="news.title"
+        name="title"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="content">Content</label>
+      <input
+        class="form-control"
+        id="content"
+        required
+        [(ngModel)]="news.content"
+        name="content"
+      />
+    </div>
+
+    <button (click)="saveNews()" class="btn btn-success">Submit</button>
+  </div>
+
+  <div *ngIf="submitted">
+    <h4>You submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newNews()">Add</button>
+  </div>
+</div>
